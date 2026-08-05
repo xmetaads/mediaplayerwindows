@@ -1,0 +1,10 @@
+# OS and editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Vercel CLI, if it is ever run locally
+.vercel

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Media Player Windows</title>
+<meta name="description" content="Media Player Windows collects nothing. This page lists exactly which files it writes on your computer, and why there is no data for us to hold.">
+<link rel="canonical" href="https://mediaplayerwindows.com/privacy">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/logo-96.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="/">
+      <img src="/assets/logo-96.png" alt="" width="30" height="30">
+      <span>Media Player Windows</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a class="hide-sm" href="/#features">Features</a>
+      <a href="/terms">Terms</a>
+      <a href="/#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="legal">
+  <div class="shell">
+
+    <div class="legal-head">
+      <h1 style="font-size:clamp(2rem,4.5vw,2.9rem)">Privacy Policy</h1>
+      <p class="muted" style="margin:0">
+        Effective date: <strong>[EFFECTIVE DATE]</strong> · Applies to
+        Media Player Windows version 0.1.0 and later
+      </p>
+    </div>
+
+    <div class="legal-body">
+
+      <!-- ==================================================================
+           REMOVE THIS BLOCK BEFORE THE SITE GOES LIVE.
+           =================================================================== -->
+      <div class="notice" id="publisher-todo">
+        <p><strong>Note for the publisher — delete this box before launch.</strong></p>
+        <p class="small" style="margin-bottom:.5rem">
+          Everything this page says about the application was checked against
+          the version 0.1.0 source: it contains no code that opens a network
+          connection. Before publishing:
+        </p>
+        <ul class="small" style="margin-bottom:0">
+          <li>Fill in every <code>[BRACKETED]</code> value.</li>
+          <li>Section 7 covers this website. It is written for a deployment with
+            <strong>no</strong> analytics. If you later add analytics, a
+            newsletter, a contact form or Vercel Web Analytics, this page must be
+            updated first — those change the answer.</li>
+          <li>Have it reviewed for GDPR, UK GDPR, CCPA/CPRA and any other regime
+            you fall under. “We collect nothing” is a strong position but it
+            still has to be stated in the form each regime expects.</li>
+          <li>Re-check it against the build on every release. This document is
+            only as true as the code.</li>
+        </ul>
+      </div>
+
+      <div class="callout" style="margin-bottom:2.5rem">
+        <h2 style="margin-top:0;font-size:1.15rem">The short version</h2>
+        <p style="margin-bottom:.75rem">
+          <strong>The application collects nothing and sends nothing.</strong>
+          It has no account system, no telemetry, no analytics, no crash
+          reporting and no update check. It contains no code that opens a network
+          connection on its own.
+        </p>
+        <p style="margin-bottom:0">
+          Everything it remembers — your settings, your library index, what you
+          watched and where you stopped — is written to files in your own user
+          profile and never leaves your computer. We have no server holding your
+          data, because there is no data being sent to one.
+        </p>
+      </div>
+
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#p1">Who we are</a></li>
+          <li><a href="#p2">What the application collects</a></li>
+          <li><a href="#p3">What it stores on your computer</a></li>
+          <li><a href="#p4">When network traffic happens</a></li>
+          <li><a href="#p5">Deleting your data</a></li>
+          <li><a href="#p6">Children</a></li>
+          <li><a href="#p7">This website</a></li>
+          <li><a href="#p8">Third-party components</a></li>
+          <li><a href="#p9">Your rights</a></li>
+          <li><a href="#p10">Changes to this policy</a></li>
+          <li><a href="#p11">Contact</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="p1">1. Who we are</h2>
+      <p>
+        The Media Player Windows application and the website at
+        mediaplayerwindows.com are published by
+        <strong>[LEGAL ENTITY NAME]</strong>, <strong>[REGISTERED ADDRESS]</strong>.
+        For data-protection purposes we are the controller for any personal data
+        this policy describes — which, for the application, is none.
+      </p>
+
+      <h2 id="p2">2. What the application collects</h2>
+      <p><strong>Nothing.</strong> Specifically, the application does not:</p>
+      <ul>
+        <li>ask you to create an account or sign in;</li>
+        <li>send usage statistics, feature-usage counters, session lengths or any other telemetry;</li>
+        <li>send crash reports or stack traces;</li>
+        <li>contact a server to check for updates or to validate a licence;</li>
+        <li>assign you an identifier, advertising ID or device fingerprint;</li>
+        <li>read your address book, location, camera or microphone;</li>
+        <li>include any advertising, tracking or analytics SDK;</li>
+        <li>transmit the names, contents or metadata of any file you open.</li>
+      </ul>
+      <p>
+        This is verifiable rather than merely promised: the application ships as
+        readable Python source, and no module in it imports an HTTP or socket
+        client. The only networking code in the product is a URL <em>parser</em>,
+        used to recognise when the text you typed is a stream address rather than
+        a file path.
+      </p>
+
+      <h2 id="p3">3. What it stores on your computer</h2>
+      <p>
+        The application keeps state so it can be useful across sessions. All of
+        it is local. None of it is transmitted.
+      </p>
+      <div class="table-wrap">
+        <table class="specs">
+          <thead>
+            <tr><th scope="col">File</th><td><strong>What is in it</strong></td></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>settings.json</code></th>
+              <td>Your preferences: theme, accent, volume, playback speed, chosen engine, subtitle styling, window position.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>library.db</code></th>
+              <td>A SQLite index of the folders you asked it to scan: file paths, titles, durations, and artist/album/genre/year tags read from the files. Also your watch history — file path, last position, how many times played, when — and any bookmarks you set.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>session.json</code></th>
+              <td>The playlist that was open when you last closed the window, so it can be restored.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>logs\player.log</code></th>
+              <td>A diagnostic log: which engine started, errors, and the paths of files that were opened. Written so that a problem can be diagnosed on your own machine. It is never sent anywhere.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>cache\thumbnails\</code></th>
+              <td>Thumbnail images generated from your own media for the library view.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These live in one of two places, depending on how you run it:</p>
+      <ul>
+        <li><strong>Installed:</strong> <code>%LOCALAPPDATA%\MediaPlayerWindows</code></li>
+        <li><strong>Portable</strong> (a <code>portable.txt</code> file next to the application): a <code>data</code> folder beside the application itself, so a USB stick leaves nothing on the host machine.</li>
+      </ul>
+      <p>
+        Screenshots you take are saved to <code>Pictures\Media Player Windows</code>,
+        or beside the application in portable mode.
+      </p>
+
+      <h2 id="p4">4. When network traffic happens</h2>
+      <p>
+        Only when you cause it. If you open a network stream — by pasting an
+        address, or opening a playlist that contains one — the player connects to
+        <em>that</em> address in order to play it. That connection goes to the
+        server you named. It does not pass through us, and we are not told about
+        it.
+      </p>
+      <p>
+        Whoever operates that server can see what any server sees: your IP
+        address, the time, and what you requested. That is between you and them,
+        under their privacy policy, not ours.
+      </p>
+      <p>
+        Nothing else in the application initiates a connection. If you run it on
+        a machine with no network at all, every feature except stream playback
+        behaves identically.
+      </p>
+
+      <h2 id="p5">5. Deleting your data</h2>
+      <p>
+        Because it is all local, you are in complete control and do not need to
+        ask us for anything.
+      </p>
+      <ul>
+        <li><strong>Watch history:</strong> <em>Settings → Advanced → Clear watch history</em>.</li>
+        <li><strong>Everything at once:</strong> delete the data folder listed in section 3. <em>Settings → Advanced → Open the data folder</em> takes you straight there.</li>
+        <li><strong>On uninstall:</strong> the uninstaller asks whether to remove your settings, library and history. It defaults to keeping them, so you have to choose deletion deliberately — and it will not delete them silently during an unattended uninstall.</li>
+      </ul>
+
+      <h2 id="p6">6. Children</h2>
+      <p>
+        The application is a general-purpose media player and is not directed at
+        children. Because it collects no data at all, it collects no data from
+        children.
+      </p>
+
+      <h2 id="p7">7. This website</h2>
+      <p>
+        This site is a set of static pages. It sets <strong>no cookies</strong>,
+        has no login, no contact form and no analytics or tracking scripts, so
+        there is no consent banner to click.
+      </p>
+      <h3>Hosting</h3>
+      <p>
+        It is hosted by <strong>Vercel Inc.</strong>, which processes standard
+        server request logs (IP address, timestamp, requested URL, user agent) in
+        order to serve pages and protect the service. Vercel acts as our
+        processor; see Vercel's own privacy documentation for its retention
+        practices.
+      </p>
+      <h3>Fonts</h3>
+      <p>
+        The pages load the Outfit and Work Sans typefaces from Google Fonts. Your
+        browser therefore makes a request to <code>fonts.googleapis.com</code>
+        and <code>fonts.gstatic.com</code>, which discloses your IP address to
+        Google.
+      </p>
+      <div class="notice">
+        <p class="small" style="margin:0">
+          [PUBLISHER: if you would rather not disclose visitors' IP addresses to
+          Google — the safer reading of GDPR — self-host the two font files and
+          delete this subsection. The change is one <code>@import</code> line in
+          <code>styles.css</code>.]
+        </p>
+      </div>
+      <h3>Downloads</h3>
+      <p>
+        The download button points at GitHub. Following it takes you to
+        <strong>GitHub, Inc.</strong>, under its own privacy policy.
+      </p>
+
+      <h2 id="p8">8. Third-party components</h2>
+      <p>
+        The application bundles a Python runtime, the wxPython interface toolkit,
+        Pillow, mutagen and Send2Trash. These are libraries running on your
+        computer; none of them is a service and none of them reports to anyone.
+      </p>
+      <p>
+        If you add the optional mpv or VLC playback libraries yourself, they run
+        locally too. They are not ours and are not included in the installer, and
+        their own terms apply to them.
+      </p>
+
+      <h2 id="p9">9. Your rights</h2>
+      <p>
+        Data-protection law gives you rights over personal data an organisation
+        holds about you — access, correction, erasure, portability, objection, and
+        the right to complain to a supervisory authority.
+      </p>
+      <p>
+        For the application, <strong>we hold nothing to which those rights could
+        apply</strong>. There is no account, no profile and no server-side
+        record. Your data is in your own file system, under your own control.
+      </p>
+      <p>
+        For the website, the only personal data involved is what our host
+        processes in its request logs. If you want to exercise a right in respect
+        of that, or you are unsure, write to us at the address in section 11 and
+        we will help.
+      </p>
+      <p class="small muted">
+        [PUBLISHER: name the competent supervisory authority for your
+        establishment here, and add the CCPA/CPRA-specific disclosures if you
+        offer the software to California residents — even a “we sell no personal
+        information” statement has to be made explicitly.]
+      </p>
+
+      <h2 id="p10">10. Changes to this policy</h2>
+      <p>
+        If the application ever starts doing something this page says it does not
+        — an update check, an opt-in diagnostic report, anything at all — this
+        page will be changed <em>before</em> that version is released, and the
+        effective date above will change with it. The current version is always
+        the one on this page.
+      </p>
+
+      <h2 id="p11">11. Contact</h2>
+      <p>
+        Privacy questions: <strong>[CONTACT EMAIL ADDRESS]</strong>.
+      </p>
+      <p class="small muted" style="margin-top:2.5rem">
+        See also the <a href="/terms">Terms of Service</a>.
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand" href="/" style="margin-bottom:.75rem">
+        <img src="/assets/logo-96.png" alt="" width="30" height="30">
+        <span>Media Player Windows</span>
+      </a>
+      <p class="small muted" style="max-width:34ch;margin:0">
+        A modern media player for Windows 10 and 11.
+      </p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/#download">Download</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy Policy</a>
+    </nav>
+  </div>
+  <div class="shell" style="margin-top:2.5rem">
+    <p class="small" style="margin:0">© 2026 Media Player Windows. Windows is a trademark of Microsoft Corporation.</p>
+  </div>
+</footer>
+
+</body>
+</html>
