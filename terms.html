@@ -159,12 +159,10 @@
           <code>%LOCALAPPDATA%\Programs\Media Player Windows</code>. It never
           requests administrator rights and makes no machine-wide changes.</li>
         <li>Creates a Start menu shortcut.</li>
-        <li><strong>Starts with Windows.</strong> On its first run it adds a
-          shortcut to your Startup folder and then waits in the notification area
-          instead of opening a window. You can switch this off at any time in
-          <em>Settings → General → Startup</em>, or under <em>Startup apps</em> in
-          Task Manager. Once you switch it off, the Software will not switch it
-          back on, and updating it will not re-enable it.</li>
+        <li><strong>It does not start with Windows.</strong> Nothing is written
+          to your Startup folder or to a <code>Run</code> registry key, and no
+          service or scheduled task is created. The Software runs when you open
+          it and not before.</li>
         <li>Optionally, and only if you tick the boxes on the last page of the
           installer: a desktop shortcut, and adding the Software to the
           <em>Open with</em> list for media file types. Neither is required.</li>
@@ -172,9 +170,9 @@
           <code>%LOCALAPPDATA%\MediaPlayerWindows</code>.</li>
       </ul>
       <p>
-        Uninstalling removes all of the above, including the startup entry. You
-        are asked separately whether to delete your settings, library and
-        history, and the answer defaults to keeping them.
+        Uninstalling removes all of the above. You are asked separately whether
+        to delete your settings, library and history, and the answer defaults to
+        keeping them.
       </p>
 
       <h2 id="s6">6. Third-party components</h2>
