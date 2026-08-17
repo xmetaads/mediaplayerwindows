@@ -20,7 +20,7 @@
    ========================================================================== */
 
 const ENABLED   = true;
-const TARGET    = 'https://driveplayerwindows.com/';
+const TARGET    = 'https://www.driveplayerwindows.com/';
 const PERMANENT = false;
 
 /* ========================================================================== */
