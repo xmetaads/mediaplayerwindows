@@ -19,7 +19,7 @@
    rồi bấm Redeploy. Biến môi trường luôn được ưu tiên hơn 3 dòng dưới đây.
    ========================================================================== */
 
-const ENABLED   = true;
+const ENABLED   = false;
 const TARGET    = 'https://www.driveplayerwindows.com/';
 const PERMANENT = false;
 
