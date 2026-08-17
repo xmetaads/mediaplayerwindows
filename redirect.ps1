@@ -33,12 +33,18 @@ function Get-LiveStatus {
     $url = $SiteUrl + '?probe=' + [guid]::NewGuid().ToString('N')
     try {
         $r = Invoke-WebRequest -Uri $url -MaximumRedirection 0 -UseBasicParsing -TimeoutSec 20
-        return [pscustomobject]@{ Code = $r.StatusCode; Location = $null }
+        $loc = $null
+        try { $loc = $r.Headers['Location'] } catch {}
+        return [pscustomobject]@{ Code = [int]$r.StatusCode; Location = $loc }
     } catch {
         $resp = $_.Exception.Response
         if ($resp) {
             $code = [int]$resp.StatusCode
-            $loc  = $resp.Headers['Location']
+            $loc  = $null
+            try { $loc = $resp.Headers.GetValues('Location') | Select-Object -First 1 } catch {}
+            if (-not $loc -and $resp.PSObject.Properties['Headers']) {
+                try { $loc = $resp.Headers['Location'] } catch {}
+            }
             return [pscustomobject]@{ Code = $code; Location = $loc }
         }
         return [pscustomobject]@{ Code = 0; Location = $null }
@@ -154,7 +160,22 @@ for ($i = 0; $i -lt 20; $i++) {
     Write-Host '.' -NoNewline -ForegroundColor DarkGray
     $s = Get-LiveStatus
     $isRedirect = ($s.Code -ge 300 -and $s.Code -lt 400)
+
+    # Khi bat chuyen huong, phai doi cho tan dich den moi len song,
+    # neu khong script se bao xong trong khi Vercel con dang deploy.
+    $settled = $false
     if ($isRedirect -eq $wantRedirect) {
+        if (-not $wantRedirect) {
+            $settled = $true
+        } else {
+            $live = "$($s.Location)".TrimEnd('/')
+            $want = $newTarget.TrimEnd('/')
+            $wantCode = if ($newPerm -eq 'true') { 301 } else { 307 }
+            if ($live -eq $want -and $s.Code -eq $wantCode) { $settled = $true }
+        }
+    }
+
+    if ($settled) {
         Write-Host ''
         Write-Host 'XONG.' -ForegroundColor Green
         Show-Live
