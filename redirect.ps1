@@ -73,7 +73,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Clone that bai.' }
 
 $File = Join-Path $Work 'middleware.js'
 if (-not (Test-Path $File)) { throw "Khong tim thay middleware.js trong repo." }
-$text = Get-Content $File -Raw
+# Doc/ghi bang UTF-8 khong BOM, neu khong dau tieng Viet trong file se hong.
+$text = [System.IO.File]::ReadAllText($File, [System.Text.UTF8Encoding]::new($false))
 
 $curEnabled = [regex]::Match($text, '(?m)^const ENABLED\s*=\s*(true|false);').Groups[1].Value
 $curTarget  = [regex]::Match($text, "(?m)^const TARGET\s*=\s*'([^']*)';").Groups[1].Value
@@ -133,7 +134,7 @@ if ($changes.Count -eq 0) {
 $text = [regex]::Replace($text, '(?m)^const ENABLED(\s*)=\s*(true|false);',   "const ENABLED`$1= $newEnabled;")
 $text = [regex]::Replace($text, "(?m)^const TARGET(\s*)=\s*'[^']*';",         "const TARGET`$1= '$newTarget';")
 $text = [regex]::Replace($text, '(?m)^const PERMANENT(\s*)=\s*(true|false);', "const PERMANENT`$1= $newPerm;")
-Set-Content -Path $File -Value $text -Encoding utf8 -NoNewline
+[System.IO.File]::WriteAllText($File, $text, [System.Text.UTF8Encoding]::new($false))
 
 Push-Location $Work
 try {
