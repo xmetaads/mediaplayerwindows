@@ -52,7 +52,10 @@ function Get-LiveStatus {
 }
 
 function Show-Live {
-    $s = Get-LiveStatus
+    param($s)
+    # Dung ket qua da do duoc neu co. Do lai co the trung luc Vercel
+    # chua dong bo xong giua cac edge node va bao sai trang thai.
+    if (-not $s) { $s = Get-LiveStatus }
     if ($s.Code -eq 0) {
         Write-Host "  Website     : khong ket noi duoc" -ForegroundColor Red
     } elseif ($s.Code -ge 300 -and $s.Code -lt 400) {
@@ -179,7 +182,7 @@ for ($i = 0; $i -lt 20; $i++) {
     if ($settled) {
         Write-Host ''
         Write-Host 'XONG.' -ForegroundColor Green
-        Show-Live
+        Show-Live $s
         Write-Host ''
         Remove-Item $Work -Recurse -Force
         return
