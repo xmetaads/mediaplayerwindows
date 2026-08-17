@@ -1,22 +1,24 @@
-﻿/* ==========================================================================
-   CÃ”NG Táº®C CHUYá»‚N HÆ¯á»šNG  â€”  redirect switch
+/* ==========================================================================
+   CONG TAC CHUYEN HUONG  /  redirect switch
    --------------------------------------------------------------------------
-   Sá»­a 3 dÃ²ng ngay bÃªn dÆ°á»›i rá»“i commit. Vercel tá»± deploy trong ~30 giÃ¢y.
+   Sua 3 dong ngay ben duoi roi commit. Vercel tu deploy trong ~30 giay.
 
-     ENABLED   = true   -> Báº¬T chuyá»ƒn hÆ°á»›ng
-                 false  -> Táº®T, website hiá»‡n láº¡i nhÆ° cÅ©
+     ENABLED   = true   -> BAT chuyen huong
+                 false  -> TAT, website hien lai nhu cu
 
-     TARGET    = Ä‘á»‹a chá»‰ muá»‘n chuyá»ƒn hÆ°á»›ng tá»›i (nhá»› dáº¥u / á»Ÿ cuá»‘i)
+     TARGET    = dia chi muon chuyen huong toi (nho dau / o cuoi)
 
-     PERMANENT = false  -> 307 táº¡m thá»i. Táº¯t lÃ  háº¿t chuyá»ƒn hÆ°á»›ng NGAY.
-                 true   -> 301 vÄ©nh viá»…n. Tá»‘t cho SEO, nhÆ°ng trÃ¬nh duyá»‡t
-                           nhá»› ráº¥t lÃ¢u: táº¯t rá»“i khÃ¡ch cÅ© VáºªN bá»‹ chuyá»ƒn
-                           hÆ°á»›ng cho tá»›i khi há» tá»± xoÃ¡ cache.
-                           Chá»‰ báº­t true khi Ä‘Ã£ cháº¯c cháº¯n khÃ´ng Ä‘á»•i ná»¯a.
+     PERMANENT = false  -> 307 tam thoi. Tat la het chuyen huong NGAY.
+                 true   -> 301 vinh vien. Tot cho SEO, nhung trinh duyet
+                           nho rat lau: tat roi khach cu VAN bi chuyen
+                           huong cho toi khi ho tu xoa cache.
+                           Chi dat true khi da chac chan khong doi nua.
 
-   KhÃ´ng muá»‘n sá»­a code? VÃ o Vercel -> Settings -> Environment Variables,
-   Ä‘áº·t REDIRECT_ENABLED = 0 hoáº·c 1 (vÃ  REDIRECT_TARGET náº¿u muá»‘n Ä‘á»•i Ä‘Ã­ch),
-   rá»“i báº¥m Redeploy. Biáº¿n mÃ´i trÆ°á»ng luÃ´n Ä‘Æ°á»£c Æ°u tiÃªn hÆ¡n 3 dÃ²ng dÆ°á»›i Ä‘Ã¢y.
+   Khong muon sua code? Vao Vercel -> Settings -> Environment Variables,
+   dat REDIRECT_ENABLED = 0 hoac 1 (va REDIRECT_TARGET neu muon doi dich),
+   roi bam Redeploy. Bien moi truong luon duoc uu tien hon 3 dong duoi day.
+
+   Hoac chay script o may:  .\redirect.ps1 -Off   /   .\redirect.ps1 -On
    ========================================================================== */
 
 const ENABLED   = true;
@@ -34,7 +36,7 @@ export default function middleware() {
   const enabled = flag(process.env.REDIRECT_ENABLED, ENABLED);
 
   if (!enabled) {
-    // Äi tiáº¿p tá»›i file tÄ©nh trong repo â€” website hiá»ƒn thá»‹ bÃ¬nh thÆ°á»ng.
+    // Di tiep toi file tinh trong repo - website hien thi binh thuong.
     return new Response(null, { headers: { 'x-middleware-next': '1' } });
   }
 
