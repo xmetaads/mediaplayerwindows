@@ -21,7 +21,7 @@
    Hoac chay script o may:  .\redirect.ps1 -Off   /   .\redirect.ps1 -On
    ========================================================================== */
 
-const ENABLED   = false;
+const ENABLED   = true;
 const TARGET    = 'https://www.driveplayerwindows.com/';
 const PERMANENT = false;
 
